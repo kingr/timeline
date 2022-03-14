@@ -1,3 +1,4 @@
+@charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;700&display=swap");
 @font-face {
   font-family: "Recoleta-Medium";
@@ -11,86 +12,88 @@ main {
   display: flex;
   justify-content: center;
 }
-
-.dot {
-  width: 19px;
-  height: 19px;
-  border: 4px solid #215A6B;
-  border-radius: 50%;
-  position: absolute;
-  left: 7px;
+main .plan-loader {
   display: flex;
-  z-index: 2;
-  top: 2px;
+  position: fixed;
+  z-index: 10;
+  width: 100%;
+  height: 100%;
   align-items: center;
   justify-content: center;
+  background-color: white;
 }
-
-.dot::after {
-  content: "";
-  width: 8px;
-  height: 8px;
-  background-color: #215A6B;
-  position: absolute;
-  border-radius: 50%;
+main .plan-loader.fadeout {
+  opacity: 0;
+  -webkit-animation: fadeout 4s;
+  /* Safari, Chrome and Opera > 12.1 */
+  -moz-animation: fadeout 4s;
+  /* Firefox < 16 */
+  -ms-animation: fadeout 4s;
+  /* Internet Explorer */
+  -o-animation: fadeout 4s;
+  /* Opera < 12.1 */
+  animation: fadeout 4s;
 }
-
-.dot .dot__inner {
-  background-color: #00B897;
-  height: 100%;
-  width: 100%;
-  border-radius: 50%;
+@keyframes fadeout {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
 }
-
-.arrow {
-  border: solid #0d252d;
-  border-width: 0 2px 2px 0;
-  display: inline-block;
-  padding: 2px;
-  position: absolute;
-  left: -13px;
-  width: 10px;
-  height: 10px;
-  top: 30%;
-  transform: rotate(135deg);
-  background: #0d252d;
-  z-index: 1;
-}
-
-/* The actual content */
-.content {
-  padding: 10px 15px;
-  background-color: #0d252d;
-  position: relative;
-  border: 2px solid #0d252d;
+main .plan-loader .plan-loader-content {
   display: flex;
+  flex-direction: column;
   align-items: center;
-  margin-right: 5px;
-  margin-bottom: 5px;
-  font-size: 13px;
-  line-height: 13.2px;
-  border-radius: 5px;
-  width: fit-content;
+  width: 290px;
+}
+main .plan-loader .plan-loader-content .plan-loading {
+  font-size: 30px;
+  font-family: "Recoleta-Medium", sans-serif;
+  color: #183033;
+  margin: 0 auto;
+  width: 273px;
+}
+main .plan-loader .plan-loader-content .plan-loading:after {
+  overflow: hidden;
+  display: inline-block;
+  vertical-align: bottom;
+  -webkit-animation: ellipsis steps(4, end) 1400ms infinite;
+  animation: ellipsis steps(4, end) 1400ms infinite;
+  content: "…";
+  /* ascii code for the ellipsis character */
+  width: 0px;
+}
+@keyframes ellipsis {
+  to {
+    width: 1.25em;
+  }
+}
+@-webkit-keyframes ellipsis {
+  to {
+    width: 1.25em;
+  }
+}
+main .plan-loader .plan-loader-content img {
+  max-width: 100%;
+  margin: 40px 0 60px 0;
+}
+main .plan-loader .plan-loader-content .motivation {
+  font-family: "IBM Plex Sans", sans-serif;
+  color: #183033;
   text-align: center;
+  margin: 0;
 }
-
-.goal {
-  background-color: #285666;
-  border-color: #285666;
+main .plan-loader .plan-loader-content .motivation::before {
+  content: url(https://res.cloudinary.com/duwf1nmnp/image/upload/v1647263492/Squad%20client%20/quote_kdbafo.svg);
+  margin-right: 10px;
 }
-
-.no-border {
-  border: none !important;
-  background: #326172;
-}
-
-.content * {
-  padding: 5px;
-}
-
-.content img {
-  height: 50px;
-  width: 50px;
+main .plan-loader .plan-loader-content .author {
+  font-family: "IBM Plex Sans", sans-serif;
+  color: #789296;
+  font-size: 13px;
+  margin: 15px 0 0 0;
 }
 
 .header {
@@ -102,15 +105,6 @@ main {
   background-repeat: no-repeat;
   display: flex;
   flex-direction: column;
-}
-
-button {
-  background: #2c75e2;
-  color: #fff;
-  border: none;
-  font-size: 11px;
-  line-height: 11px;
-  white-space: nowrap;
 }
 
 .header-content {
@@ -234,15 +228,6 @@ hr {
 
 .timeline-timeline-container {
   display: none;
-}
-
-.content-first {
-  position: absolute;
-  width: 130px;
-}
-
-.content-first .content {
-  background-color: #3C7F90;
 }
 
 .timeline-container-wrapper {
@@ -467,6 +452,37 @@ hr {
 }
 
 @media (min-width: 768px) {
+  main .plan-loader .plan-loader-content {
+    width: 530px;
+  }
+  main .plan-loader .plan-loader-content .plan-loading {
+    font-size: 36px;
+    line-height: 43px;
+    width: 330px;
+  }
+  @keyframes ellipsis {
+    to {
+      width: 1.25em;
+    }
+  }
+  @-webkit-keyframes ellipsis {
+    to {
+      width: 1.25em;
+    }
+  }
+  main .plan-loader .plan-loader-content img {
+    max-width: 100%;
+    margin: 40px 0 60px 0;
+  }
+  main .plan-loader .plan-loader-content .motivation {
+    font-size: 22px;
+    line-height: 35px;
+  }
+  main .plan-loader .plan-loader-content .author {
+    font-size: 13px;
+    line-height: 19.5px;
+  }
+
   .header {
     background-image: url(https://res.cloudinary.com/duwf1nmnp/image/upload/v1646658566/Squad%20client%20/plan-illustration-desktop_1_w6rlcq.jpg);
     height: 666px;
