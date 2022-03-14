@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;700&display=swap');
   
 @font-face {
   font-family: "Recoleta-Medium";
@@ -192,26 +192,44 @@ main {
   margin: 8px;
   opacity: 0.2;
 }
- .mantra {
-  margin: 60px 16px 30px;
-  background-color: #326172;
-  padding: 20px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  font-family: 'IBM Plex Sans', sans-serif;
-}
- .mantra .title{
-  font-size: 16px;
-  list-style: 16.8px;
-  color: #fff;
-  text-transform: uppercase;
-}
- .mantra .description{
-  font-size: 24px;
-  list-style: 33.6px;
-  color: #fff;
-  text-align: center;
+
+.motto-wrapper {
+  background-color: #215A6B;
+  padding: 10px;
+
+  .motto {
+    border-radius: 4px;
+    background-color: #173F4B;
+    padding: 38px 20px 56px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: 'IBM Plex Sans', sans-serif;
+
+    hr {
+      width: 216px;
+      border: 2px solid rgba(255,255,255,0.15);
+      margin: 12px 0 20px 0;
+      opacity: 1;
+    }
+
+    &--title {
+      font-size: 14px;
+      line-height: 17px;
+      
+      color: #fff;
+      text-transform: uppercase;
+      font-weight: bold;
+    }
+
+    &--body {
+      font-size: 24px;
+      line-height: 33.6px;
+      color: #FFF7CE;
+      text-align: center;
+      font-family: "Recoleta-Medium", sans-serif;
+    }
+  }
 }
  .timeline-timeline-container { display: none;}
 
@@ -490,7 +508,14 @@ main {
     }
   }
 
-@media (min-width: 768px) {
+@media (min-width: 768px) { 
+  .header { 
+    background-image: url(https://res.cloudinary.com/duwf1nmnp/image/upload/v1646658566/Squad%20client%20/plan-illustration-desktop_1_w6rlcq.jpg);
+    height: 666px;
+  }
+}
+
+@media (min-width: 950px) {
 
   .timeline-spacer {
     height: 85px;
@@ -499,6 +524,12 @@ main {
 
   .timeline-container-wrapper {
     width: 1000px;
+
+
+
+    .header-content {
+      padding-top: 45px;
+    }
 
     .timeline-mobile {
       display: none;
@@ -509,7 +540,6 @@ main {
       background-color: #215A6B;
       padding: 0 70px;
       height: 838px;
-      margin-bottom: 90px;
       display: flex;
       position: relative;
       justify-content: space-between;
@@ -900,35 +930,49 @@ main {
       }
     }
 
-  .header-content {
-    padding-top: 45px;
-  }
+    .header-content .name {
+      font-size: 20px;
+      line-height: 30px;
+    }
 
+    .header-content .lifeplan-block p {
+      font-size: 36px;
+      line-height: 43px;
+    }
 
-  .header-content .name {
-    font-size: 20px;
-    line-height: 30px;
-  }
+    .header .description-wrapper {
+      width: 400px;
+    }
 
-  .header-content .lifeplan-block p {
-    font-size: 36px;
-    line-height: 43px;
-  }
+    .header .description {
+      margin-top: 28px;
+      font-size: 28px;
+      line-height: 38px; 
+    }
 
-  .header { 
-    background-image: url(https://res.cloudinary.com/duwf1nmnp/image/upload/v1646658566/Squad%20client%20/plan-illustration-desktop_1_w6rlcq.jpg);
-    height: 666px;
-  }
+    .motto-wrapper {
+      padding: 10px 60px 60px 60px;
+      .motto {
+        padding: 56px 220px 56px 220px;
+    
+        hr {
+          width: 216px;
+          border: 2px solid rgba(255,255,255,0.15);
+          margin: 12px 0 20px 0;
+          opacity: 1;
+        }
+    
+        &--title {
+          font-size: 16px;
+        }
+    
+        &--body {
+          font-size: 28px;
+          line-height: 39px;
+        }
+      }
+    }
 
-  .header .description-wrapper {
-    width: 400px;
-  }
-
-  .header .description {
-    margin-top: 28px;
-    font-size: 28px;
-    line-height: 38px; 
-  }
 
   }
 }   
