@@ -1,8 +1,11 @@
 var start = document.querySelector(".goal-column--start");
+var solidLine = document.querySelector(".solid-line");
 var firstGoal = document.querySelector("#firstGoal");
 var secondGoal = document.querySelector("#secondGoal");
 var thirdGoal = document.querySelector("#thirdGoal");
 var timeline = document.querySelector(".timeline-desktop");
+
+solidLine.classList.add("one-goal");
 
 switch (firstGoal.childElementCount) {
   case 1:
@@ -20,6 +23,7 @@ switch (firstGoal.childElementCount) {
 }
 
 if (secondGoal) {
+  solidLine.classList.add("second-goal");
   switch (secondGoal.childElementCount) {
     case 1:
       secondGoal.childNodes[1].classList.add("one-goal-top");
@@ -37,6 +41,7 @@ if (secondGoal) {
 }
 
 if (thirdGoal) {
+  solidLine.classList.add("third-goal");
   switch (thirdGoal.childElementCount) {
     case 1:
       thirdGoal.childNodes[1].classList.add("one-goal-bottom");

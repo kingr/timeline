@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;700&display=swap");
 @font-face {
   font-family: "Recoleta-Medium";
   src: url("https://res.cloudinary.com/duwf1nmnp/raw/upload/v1646657637/Squad%20client%20/font_tkrg6o.woff") format("woff"), url("https://res.cloudinary.com/duwf1nmnp/raw/upload/v1646657637/Squad%20client%20/font_tucksx.woff2") format("woff2");
@@ -191,28 +191,38 @@ hr {
   opacity: 0.2;
 }
 
-.mantra {
-  margin: 60px 16px 30px;
-  background-color: #326172;
-  padding: 20px;
+.motto-wrapper {
+  background-color: #215A6B;
+  padding: 10px;
+}
+.motto-wrapper .motto {
+  border-radius: 4px;
+  background-color: #173F4B;
+  padding: 38px 20px 56px 20px;
   display: flex;
   flex-direction: column;
   align-items: center;
   font-family: "IBM Plex Sans", sans-serif;
 }
-
-.mantra .title {
-  font-size: 16px;
-  list-style: 16.8px;
+.motto-wrapper .motto hr {
+  width: 216px;
+  border: 2px solid rgba(255, 255, 255, 0.15);
+  margin: 12px 0 20px 0;
+  opacity: 1;
+}
+.motto-wrapper .motto--title {
+  font-size: 14px;
+  line-height: 17px;
   color: #fff;
   text-transform: uppercase;
+  font-weight: bold;
 }
-
-.mantra .description {
+.motto-wrapper .motto--body {
   font-size: 24px;
-  list-style: 33.6px;
-  color: #fff;
+  line-height: 33.6px;
+  color: #FFF7CE;
   text-align: center;
+  font-family: "Recoleta-Medium", sans-serif;
 }
 
 .timeline-timeline-container {
@@ -450,6 +460,12 @@ hr {
 }
 
 @media (min-width: 768px) {
+  .header {
+    background-image: url(https://res.cloudinary.com/duwf1nmnp/image/upload/v1646658566/Squad%20client%20/plan-illustration-desktop_1_w6rlcq.jpg);
+    height: 666px;
+  }
+}
+@media (min-width: 950px) {
   .timeline-spacer {
     height: 85px;
     background-color: #215A6B;
@@ -457,6 +473,9 @@ hr {
 
   .timeline-container-wrapper {
     width: 1000px;
+  }
+  .timeline-container-wrapper .header-content {
+    padding-top: 45px;
   }
   .timeline-container-wrapper .timeline-mobile {
     display: none;
@@ -466,20 +485,47 @@ hr {
     background-color: #215A6B;
     padding: 0 70px;
     height: 838px;
-    margin-bottom: 90px;
     display: flex;
     position: relative;
     justify-content: space-between;
     align-items: center;
   }
-  .timeline-container-wrapper .timeline-desktop .split-line {
+  .timeline-container-wrapper .timeline-desktop .solid-line {
     height: 2px;
-    width: 779px;
     top: 390px;
     position: absolute;
     background-color: #fff;
     left: 122px;
     z-index: 1;
+  }
+  .timeline-container-wrapper .timeline-desktop .solid-line.one-goal {
+    width: 375px;
+  }
+  .timeline-container-wrapper .timeline-desktop .solid-line.one-goal::after {
+    content: "";
+    border-top: 2px dotted white;
+    background-color: #215A6B;
+    width: 393px;
+    position: absolute;
+    top: 0;
+    left: 381px;
+    z-index: 3;
+  }
+  .timeline-container-wrapper .timeline-desktop .solid-line.second-goal {
+    width: 500px;
+  }
+  .timeline-container-wrapper .timeline-desktop .solid-line.second-goal::after {
+    content: "";
+    border-top: 2px dotted white;
+    background-color: #215A6B;
+    width: 206px;
+    position: absolute;
+    top: 0;
+    left: 570px;
+    z-index: 3;
+  }
+  .timeline-container-wrapper .timeline-desktop .solid-line.third-goal {
+    width: 555px;
   }
   .timeline-container-wrapper .timeline-desktop .goal-column {
     height: 670px;
@@ -521,30 +567,10 @@ hr {
   .timeline-container-wrapper .timeline-desktop .goal-column:nth-child(4) .goal-date__time::after {
     display: none;
   }
-  .timeline-container-wrapper .timeline-desktop .goal-column:nth-last-child(2)::after {
-    content: "";
-    border-top: 2px dotted white;
-    background-color: #215A6B;
-    width: 100%;
-    position: absolute;
-    top: 306px;
-    left: 74px;
-    z-index: 3;
-  }
   .timeline-container-wrapper .timeline-desktop .goal-column:last-child {
     height: 377px;
     margin-top: 139px;
     flex-direction: row;
-  }
-  .timeline-container-wrapper .timeline-desktop .goal-column:last-child::after {
-    content: "";
-    border-top: 2px dotted white;
-    background-color: #215A6B;
-    width: 98px;
-    position: absolute;
-    top: 90px;
-    left: 0px;
-    z-index: 3;
   }
   .timeline-container-wrapper .timeline-desktop .goal-column:last-child .goal-date__time {
     position: absolute;
@@ -768,9 +794,6 @@ hr {
     bottom: 134px;
     margin-bottom: 0;
   }
-  .timeline-container-wrapper .header-content {
-    padding-top: 45px;
-  }
   .timeline-container-wrapper .header-content .name {
     font-size: 20px;
     line-height: 30px;
@@ -779,10 +802,6 @@ hr {
     font-size: 36px;
     line-height: 43px;
   }
-  .timeline-container-wrapper .header {
-    background-image: url(https://res.cloudinary.com/duwf1nmnp/image/upload/v1646658566/Squad%20client%20/plan-illustration-desktop_1_w6rlcq.jpg);
-    height: 666px;
-  }
   .timeline-container-wrapper .header .description-wrapper {
     width: 400px;
   }
@@ -790,6 +809,25 @@ hr {
     margin-top: 28px;
     font-size: 28px;
     line-height: 38px;
+  }
+  .timeline-container-wrapper .motto-wrapper {
+    padding: 10px 60px 60px 60px;
+  }
+  .timeline-container-wrapper .motto-wrapper .motto {
+    padding: 56px 220px 56px 220px;
+  }
+  .timeline-container-wrapper .motto-wrapper .motto hr {
+    width: 216px;
+    border: 2px solid rgba(255, 255, 255, 0.15);
+    margin: 12px 0 20px 0;
+    opacity: 1;
+  }
+  .timeline-container-wrapper .motto-wrapper .motto--title {
+    font-size: 16px;
+  }
+  .timeline-container-wrapper .motto-wrapper .motto--body {
+    font-size: 28px;
+    line-height: 39px;
   }
 }
 
