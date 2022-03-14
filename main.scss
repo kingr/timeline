@@ -515,15 +515,47 @@ main {
       justify-content: space-between;
       align-items: center;
 
-      .split-line {
+      .solid-line {
         height: 2px;
-        width: 779px;
         top: 390px;
         position: absolute;
         background-color: #fff;
         left: 122px;
         z-index: 1;
+
+        &.one-goal {
+          width: 375px;
+
+          &::after {
+            content: "";
+            border-top: 2px dotted white;
+            background-color: #215A6B;
+            width: 393px;
+            position: absolute;
+            top: 0;
+            left: 381px;
+            z-index: 3;
+          }
+        }
+        &.second-goal {
+          width: 500px;
+
+          &::after {
+            content: "";
+            border-top: 2px dotted white;
+            background-color: #215A6B;
+            width: 206px;
+            position: absolute;
+            top: 0;
+            left: 570px;
+            z-index: 3;
+          }
+        }
+        &.third-goal {
+          width: 555px;
+        }
       }
+
 
       .goal-column {
         height: 670px;
@@ -575,30 +607,7 @@ main {
             }
         }
 
-        &:nth-last-child(2) {
-          &::after {
-            content: "";
-            border-top: 2px dotted white;
-            background-color: #215A6B;
-            width: 100%;
-            position: absolute;
-            top: 306px;
-            left: 74px;
-            z-index: 3;
-          }
-        }
-
         &:last-child {
-          &::after {
-            content: "";
-            border-top: 2px dotted white;
-            background-color: #215A6B;
-            width: 98px;
-            position: absolute;
-            top: 90px;
-            left: 0px;
-            z-index: 3;
-          }
           height: 377px;
           margin-top: 139px;
           flex-direction: row;

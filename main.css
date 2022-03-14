@@ -472,14 +472,42 @@ hr {
     justify-content: space-between;
     align-items: center;
   }
-  .timeline-container-wrapper .timeline-desktop .split-line {
+  .timeline-container-wrapper .timeline-desktop .solid-line {
     height: 2px;
-    width: 779px;
     top: 390px;
     position: absolute;
     background-color: #fff;
     left: 122px;
     z-index: 1;
+  }
+  .timeline-container-wrapper .timeline-desktop .solid-line.one-goal {
+    width: 375px;
+  }
+  .timeline-container-wrapper .timeline-desktop .solid-line.one-goal::after {
+    content: "";
+    border-top: 2px dotted white;
+    background-color: #215A6B;
+    width: 393px;
+    position: absolute;
+    top: 0;
+    left: 381px;
+    z-index: 3;
+  }
+  .timeline-container-wrapper .timeline-desktop .solid-line.second-goal {
+    width: 500px;
+  }
+  .timeline-container-wrapper .timeline-desktop .solid-line.second-goal::after {
+    content: "";
+    border-top: 2px dotted white;
+    background-color: #215A6B;
+    width: 206px;
+    position: absolute;
+    top: 0;
+    left: 570px;
+    z-index: 3;
+  }
+  .timeline-container-wrapper .timeline-desktop .solid-line.third-goal {
+    width: 555px;
   }
   .timeline-container-wrapper .timeline-desktop .goal-column {
     height: 670px;
@@ -521,30 +549,10 @@ hr {
   .timeline-container-wrapper .timeline-desktop .goal-column:nth-child(4) .goal-date__time::after {
     display: none;
   }
-  .timeline-container-wrapper .timeline-desktop .goal-column:nth-last-child(2)::after {
-    content: "";
-    border-top: 2px dotted white;
-    background-color: #215A6B;
-    width: 100%;
-    position: absolute;
-    top: 306px;
-    left: 74px;
-    z-index: 3;
-  }
   .timeline-container-wrapper .timeline-desktop .goal-column:last-child {
     height: 377px;
     margin-top: 139px;
     flex-direction: row;
-  }
-  .timeline-container-wrapper .timeline-desktop .goal-column:last-child::after {
-    content: "";
-    border-top: 2px dotted white;
-    background-color: #215A6B;
-    width: 98px;
-    position: absolute;
-    top: 90px;
-    left: 0px;
-    z-index: 3;
   }
   .timeline-container-wrapper .timeline-desktop .goal-column:last-child .goal-date__time {
     position: absolute;
