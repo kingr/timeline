@@ -1,3 +1,4 @@
+/* timeline */
 var start = document.querySelector(".goal-column--start");
 var solidLine = document.querySelector(".solid-line");
 var firstGoal = document.querySelector("#firstGoal");
@@ -57,3 +58,13 @@ if (thirdGoal) {
       break;
   }
 }
+
+
+
+/* timeline */
+var pageOverlay = document.querySelector('.plan-loader');
+
+setTimeout(function(){
+  pageOverlay.classList.add('fadeout')
+},6000)
+

@@ -14,160 +14,154 @@ body {
 main {
   display: flex;
   justify-content: center;
-}
 
+  .plan-loader {
+    display: flex;
+    position: fixed;
+    z-index: 10;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
 
-.dot {
-  width: 19px;
-  height: 19px;
-  border: 4px solid #215A6B;
-  border-radius: 50%;
-  position: absolute;
-  left: 7px;
-  display: flex;
-  z-index: 2;
-  top: 2px;
-  align-items: center;
-  justify-content: center;
- }
+    &.fadeout {
+      opacity: 0;
+        -webkit-animation: fadeout 4s; /* Safari, Chrome and Opera > 12.1 */
+           -moz-animation: fadeout 4s; /* Firefox < 16 */
+            -ms-animation: fadeout 4s; /* Internet Explorer */
+             -o-animation: fadeout 4s; /* Opera < 12.1 */
+                animation: fadeout 4s;
+    }
+    @keyframes fadeout {
+      from { opacity: 1; }
+      to   { opacity: 0; }
+    }
 
- .dot::after { 
-   content: "";
-   width: 8px;
-   height: 8px;
-   background-color: #215A6B;
-   position: absolute;
-   border-radius: 50%;
- }
+    .plan-loader-content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 290px;
 
- .dot .dot__inner {
-   background-color: #00B897;
-   height: 100%;
-   width: 100%;
-   border-radius: 50%;
- }
- 
+      .plan-loading {
+        font-size: 30px;
+        font-family: "Recoleta-Medium", sans-serif;
+        color: #183033;
+        margin: 0 auto;
+        width: 273px;
+      }
+      
+      .plan-loading:after {
+        overflow: hidden;
+        display: inline-block;
+        vertical-align: bottom;
+        -webkit-animation: ellipsis steps(4,end) 1400ms infinite;      
+        animation: ellipsis steps(4,end) 1400ms infinite;
+        content: "\2026"; /* ascii code for the ellipsis character */
+        width: 0px;
+      }
+      
+      @keyframes ellipsis {
+        to {
+          width: 1.25em;    
+        }
+      }
+      
+      @-webkit-keyframes ellipsis {
+        to {
+          width: 1.25em;    
+        }
+      }
 
- .arrow {
-  border: solid rgb(13,37,45);
-  border-width: 0 2px 2px 0;
-  display: inline-block;
-  padding: 2px;
-  position: absolute;
-  left: -13px;
-  width: 10px;
-  height: 10px;
-  top: 30%;
-  transform: rotate(135deg);
-  background: rgb(13,37,45);
-  z-index: 1;
-}
+      img {
+        max-width: 100%;
+        margin: 40px 0 60px 0;
+      }
 
-/* The actual content */
- .content {
-  padding: 10px 15px;
-  background-color: rgb(13,37,45);
-  position: relative;
-  border: 2px solid rgb(13,37,45);
-  display: flex;
-  align-items: center;
-  margin-right: 5px;
-  margin-bottom: 5px;
-  font-size: 13px;
-  line-height: 13.2px;
-  border-radius: 5px;
-  width: fit-content;
-  text-align: center;
-}
+      .motivation {
+        font-family: 'IBM Plex Sans', sans-serif;
+        color: #183033;
+        text-align: center;
+        margin: 0;
 
- .goal {
-  background-color: rgb(40, 86, 102);
-  border-color: rgb(40, 86, 102);
-}
- .no-border {
-  border: none !important;
-  background: #326172;
-}
-
- .content * {
-  padding: 5px;
-}
- .content img {
-  height: 50px;
-  width: 50px;
-}
-
- .header {
-  height: 512px;
-  position: relative;
-  color: #5D6E70;
-  background-image: url(https://res.cloudinary.com/duwf1nmnp/image/upload/v1646650985/Squad%20client%20/plan-illustration-mobile_orjbjt.jpg);
-  background-size: 100% 100%;
-  background-repeat: no-repeat;
-  display: flex;
-  flex-direction: column;
-}
-
-
- button {
-  background: #2c75e2;
-  color: #fff;
-  border: none;
-  font-size: 11px;
-  line-height: 11px;
-  white-space: nowrap;
-}
-
- .header-content {
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  justify-content: center;
-  padding-top: 10px;
-  color: #fff;
-  font-size: 27px;
-  text-align: center;
-  width: 100%;
-}
-
- .header-content .description {
-  font-size: 24px;
-  line-height: 32px;
-  text-align: center;
-  color: #183033;
-  margin-bottom: 60px;
-  padding: 25px;
-}
-
- .header-content .name {
-  font-size: 16px;
-  line-height: 21px;
-  margin: 7px 0 0 0;
-  color: #5D6E70;
-  position: relative;
-
-  &::after {
-    content: url(https://res.cloudinary.com/duwf1nmnp/image/upload/v1647261070/Squad%20client%20/beta-badge-mobile_wsyvdu.svg);
-    position: absolute;
-    top: 24px;
-    right: -38px;
+        &::before {
+          content: url(https://res.cloudinary.com/duwf1nmnp/image/upload/v1647263492/Squad%20client%20/quote_kdbafo.svg);
+          margin-right: 10px;
+        }
+      }
+      
+      .author {
+        font-family: 'IBM Plex Sans', sans-serif;
+        color: #789296;
+        font-size: 13px;
+        margin: 15px 0 0 0;
+      }
+    }
   }
 }
- .header-content .lifeplan-block {
-  border-top: 4px solid rgba(0, 0, 0, 0.1);
-  border-bottom: 4px solid rgba(0, 0, 0, 0.1);
-  color: #183033;
-  font-size: 14px;
-  padding: 0 10px;
-  margin-top: 7px;
+
+.header {
+height: 512px;
+position: relative;
+color: #5D6E70;
+background-image: url(https://res.cloudinary.com/duwf1nmnp/image/upload/v1646650985/Squad%20client%20/plan-illustration-mobile_orjbjt.jpg);
+background-size: 100% 100%;
+background-repeat: no-repeat;
+display: flex;
+flex-direction: column;
 }
- .header-content .lifeplan-block p { 
+
+.header-content {
+display: flex;
+align-items: center;
+flex-direction: column;
+justify-content: center;
+padding-top: 10px;
+color: #fff;
+font-size: 27px;
+text-align: center;
+width: 100%;
+}
+
+.header-content .description {
+font-size: 24px;
+line-height: 32px;
+text-align: center;
+color: #183033;
+margin-bottom: 60px;
+padding: 25px;
+}
+
+.header-content .name {
+font-size: 16px;
+line-height: 21px;
+margin: 7px 0 0 0;
+color: #5D6E70;
+position: relative;
+
+&::after {
+  content: url(https://res.cloudinary.com/duwf1nmnp/image/upload/v1647261070/Squad%20client%20/beta-badge-mobile_wsyvdu.svg);
+  position: absolute;
+  top: 24px;
+  right: -38px;
+}
+}
+.header-content .lifeplan-block {
+border-top: 4px solid rgba(0, 0, 0, 0.1);
+border-bottom: 4px solid rgba(0, 0, 0, 0.1);
+color: #183033;
+font-size: 14px;
+padding: 0 10px;
+margin-top: 7px;
+}
+.header-content .lifeplan-block p { 
   font-family: "Recoleta-Medium", sans-serif;
   font-weight: 500;
   font-size: 25px;
   margin: 5px 0;
 }
- .header-content .date{
+.header-content .date{
   font-size: 12px;
   line-height: 18px;
   color: #5D6E70;
@@ -175,26 +169,26 @@ main {
   margin: 5px 0 0 0;
 }
 
- .header .description-wrapper {
+.header .description-wrapper {
   width: 262px;
   align-self: center;
   margin-top: 17px;
 }
 
- .header .description {
-    text-align: center;
-    font-size: 22px;
-    line-height: 30px;
-    color: #183033;
-    margin: 0;
-    font-family: "Recoleta-Medium", sans-serif;
-  }
+.header .description {
+  text-align: center;
+  font-size: 22px;
+  line-height: 30px;
+  color: #183033;
+  margin: 0;
+  font-family: "Recoleta-Medium", sans-serif;
+}
 
- .dashed {
+.dashed {
   border-style: dashed;
 }
 
- hr {
+hr {
   width: 174px;
   border: 2px solid #183033;
   margin: 8px;
@@ -239,218 +233,102 @@ main {
     }
   }
 }
- .timeline-timeline-container { display: none;}
 
- .content-first {
-    position: absolute;
-    width: 130px;
+.timeline-timeline-container { display: none;}
+
+
+.timeline-container-wrapper {
+  width: 100%;
+}
+
+.timeline-desktop {
+  display: none;
+}
+
+.timeline-mobile {
+  font-family: 'IBM Plex Sans', sans-serif;
+  background-color: #215A6B;
+  padding: 80px 0 100px 0;
+}
+
+.goal-date {
+  display: flex;
+  justify-content: center;
+  position: relative;
+
+  &--first {
+    height: 110px;
   }
 
-  .content-first .content {
-    background-color: #3C7F90;
+  &:not(:first-child) {
+    margin-top: 6px;
+  }
+  
+  &:nth-last-child(2) {
+    .goal-date__line {
+      border-right: 2px dotted white;
+      background-color: transparent;
+      border-radius: 0;
+      width: 0;
+    }
   }
 
+  &:last-child { 
+    .goal-date__time {
+      margin: 0;
 
-  .timeline-container-wrapper {
-    width: 100%;
-  }
-
-  .timeline-desktop {
-    display: none;
-  }
-
-  .timeline-mobile {
-    font-family: 'IBM Plex Sans', sans-serif;
-    background-color: #215A6B;
-    padding: 80px 0 100px 0;
-  }
-
-  .goal-date {
-    display: flex;
-    justify-content: center;
-    position: relative;
-
-    &--first {
-      height: 110px;
-    }
-
-    &:not(:first-child) {
-      margin-top: 6px;
-    }
-    
-    &:nth-last-child(2) {
-      .goal-date__line {
-        border-right: 2px dotted white;
-        background-color: transparent;
-        border-radius: 0;
-        width: 0;
-      }
-    }
-
-    &:last-child { 
-      .goal-date__time {
-        margin: 0;
-
-        p  {
-          position: relative;
-          top: 78px;
-          right: 25px;
-        }
-
+      p  {
+        position: relative;
+        top: 78px;
+        right: 25px;
       }
 
-      .goal-date__line {
-        margin-left: -8px;
-        border-right: 2px dotted white;
-        background-color: transparent;
-        border-radius: 0;
-        width: 0;
-        top: -12px;
-
-        &::before {
-          content: url(https://res.cloudinary.com/duwf1nmnp/image/upload/v1646752268/Squad%20client%20/Vector_25_vwaf8t.svg);
-          top: 88px;
-          left: -9px;
-        }
-
-        &::after {
-          top: -12px;
-        }
-      }
-
-      .goal-date__goals {
-        margin-bottom: -85px;
-
-        .goal-date__goals__goal:first-child {
-          &::before {
-            top: 18px;
-          }
-
-        }
-
-        .goal-date__goals__goal:last-child {
-          margin-top: 26px;
-
-          &::after {
-            content: "";
-            background-color: #3C7F90;
-            position: absolute;
-            left: -31px;
-            top: 51px;
-            width: 16px;
-            height: 2px;
-            border-radius: 1px;
-          }
-
-          &::before {
-            content: "";
-            width: 20px;
-            height: 20px;
-            background-color: #173F4B;
-            position: absolute;
-            transform: rotate(45deg);
-            z-index: -1;
-            left: -3px;
-          }
-        }
-      }
     }
 
-
-
-    &__time {
-      margin: -17px 10px 0 0;
-      p {
-        font-size: 13px;
-        line-height: 17px;
-        color:rgba(255, 255, 255, 0.6);
-        text-align: right;
-        margin: 0;
-      }
-    }
-
-    &__line {
-      width: 2px;
-      border-radius: 2px;
-      background-color: white;
-      margin: 8px 40px 0 10px;
-      position: relative;
+    .goal-date__line {
+      margin-left: -8px;
+      border-right: 2px dotted white;
+      background-color: transparent;
+      border-radius: 0;
+      width: 0;
+      top: -12px;
 
       &::before {
-        content: url(https://res.cloudinary.com/duwf1nmnp/image/upload/v1646738502/Squad%20client%20/Oval_Copy_fyx8br.svg);
-        position: absolute;
-        top: -11px;
-        left: -3px;
+        content: url(https://res.cloudinary.com/duwf1nmnp/image/upload/v1646752268/Squad%20client%20/Vector_25_vwaf8t.svg);
+        top: 88px;
+        left: -9px;
       }
 
       &::after {
-        content: "";
-        background-color: #3C7F90;
-        position: absolute;
-        left: 16px;
-        top: -7px;
-        width: 16px;
-        height: 2px;
-        border-radius: 1px;
+        top: -12px;
+      }
+    }
+
+    .goal-date__goals {
+      margin-bottom: -85px;
+
+      .goal-date__goals__goal:first-child {
+        &::before {
+          top: 18px;
+        }
+
       }
 
-      &--first {
-        margin-top: 10px;
-
-        &::before {
-          content: url(https://res.cloudinary.com/duwf1nmnp/image/upload/v1646738436/Squad%20client%20/Step_bubble_wprco5.svg);
-          position: absolute;
-          top: -21px;
-          left: -7px;
-        } 
+      .goal-date__goals__goal:last-child {
+        margin-top: 26px;
 
         &::after {
           content: "";
           background-color: #3C7F90;
           position: absolute;
-          left: 18px;
-          top: -12px;
-          width: 21px;
+          left: -31px;
+          top: 51px;
+          width: 16px;
           height: 2px;
           border-radius: 1px;
         }
-      }
-    }
 
-    &__goals {
-      width: 130px;
-      margin-bottom: 20px;
-
-      &--first {
-        margin-right: 72px;
-        top: -55px;
-        left: 5px;
-        position: relative;
-      }
-
-      &--with-img {
-        width: 190px;
-        position: relative;
-        top: -43px;
-        left: 5px;
-      }
-
-      &__goal {
-        display: flex;
-        justify-content: flex-start;
-        background-color: #173F4B;
-        border-radius: 5px;
-        padding: 10px 12px;
-        min-width: 106px;
-        max-width: 165px;
-        min-height: 60px;
-        align-items: center;
-        margin-bottom: 3px;
-        position: relative;
-        z-index: 1;
-        filter: drop-shadow(0px 4px 12px rgba(0, 0, 0, 0.25));
-
-        &:first-child::before {
+        &::before {
           content: "";
           width: 20px;
           height: 20px;
@@ -460,63 +338,211 @@ main {
           z-index: -1;
           left: -3px;
         }
-
-        &--light {
-          background-color: #3C7F90;
-          
-          &:first-child::before { 
-            background-color: #3C7F90;
-            top: 27px; 
-          }
-          
-          &:nth-child(2):before { 
-            content: "";
-            width: 20px;
-            height: 20px;
-            background-color: #3C7F90;
-            position: absolute;
-            transform: rotate(45deg);
-            z-index: -1;
-            left: -3px;
-            top: 8px;
-          }
-
-        }
-
-        &--static-goal {
-          width: 106px;
-          min-height: 33px;
-          text-align: center;
-          filter: none;
-
-          div {
-            margin: 0;
-          }
-        }
-
-        &__img {
-          background-color: white;
-          border-radius: 4px;
-          img {
-            width: 70px;
-          }
-        }
-
-        &__desc {
-          margin-left: 8px;
-          p {
-            color: white;
-            font-size: 13px;
-            line-height: 17px;
-            margin: 0;
-          }
-        }
       }
-
     }
   }
 
+
+
+  &__time {
+    margin: -17px 10px 0 0;
+    p {
+      font-size: 13px;
+      line-height: 17px;
+      color:rgba(255, 255, 255, 0.6);
+      text-align: right;
+      margin: 0;
+    }
+  }
+
+  &__line {
+    width: 2px;
+    border-radius: 2px;
+    background-color: white;
+    margin: 8px 40px 0 10px;
+    position: relative;
+
+    &::before {
+      content: url(https://res.cloudinary.com/duwf1nmnp/image/upload/v1646738502/Squad%20client%20/Oval_Copy_fyx8br.svg);
+      position: absolute;
+      top: -11px;
+      left: -3px;
+    }
+
+    &::after {
+      content: "";
+      background-color: #3C7F90;
+      position: absolute;
+      left: 16px;
+      top: -7px;
+      width: 16px;
+      height: 2px;
+      border-radius: 1px;
+    }
+
+    &--first {
+      margin-top: 10px;
+
+      &::before {
+        content: url(https://res.cloudinary.com/duwf1nmnp/image/upload/v1646738436/Squad%20client%20/Step_bubble_wprco5.svg);
+        position: absolute;
+        top: -21px;
+        left: -7px;
+      } 
+
+      &::after {
+        content: "";
+        background-color: #3C7F90;
+        position: absolute;
+        left: 18px;
+        top: -12px;
+        width: 21px;
+        height: 2px;
+        border-radius: 1px;
+      }
+    }
+  }
+
+  &__goals {
+    width: 130px;
+    margin-bottom: 20px;
+
+    &--first {
+      margin-right: 72px;
+      top: -55px;
+      left: 5px;
+      position: relative;
+    }
+
+    &--with-img {
+      width: 190px;
+      position: relative;
+      top: -43px;
+      left: 5px;
+    }
+
+    &__goal {
+      display: flex;
+      justify-content: flex-start;
+      background-color: #173F4B;
+      border-radius: 5px;
+      padding: 10px 12px;
+      min-width: 106px;
+      max-width: 165px;
+      min-height: 60px;
+      align-items: center;
+      margin-bottom: 3px;
+      position: relative;
+      z-index: 1;
+      filter: drop-shadow(0px 4px 12px rgba(0, 0, 0, 0.25));
+
+      &:first-child::before {
+        content: "";
+        width: 20px;
+        height: 20px;
+        background-color: #173F4B;
+        position: absolute;
+        transform: rotate(45deg);
+        z-index: -1;
+        left: -3px;
+      }
+
+      &--light {
+        background-color: #3C7F90;
+        
+        &:first-child::before { 
+          background-color: #3C7F90;
+          top: 27px; 
+        }
+        
+        &:nth-child(2):before { 
+          content: "";
+          width: 20px;
+          height: 20px;
+          background-color: #3C7F90;
+          position: absolute;
+          transform: rotate(45deg);
+          z-index: -1;
+          left: -3px;
+          top: 8px;
+        }
+
+      }
+
+      &--static-goal {
+        width: 106px;
+        min-height: 33px;
+        text-align: center;
+        filter: none;
+
+        div {
+          margin: 0;
+        }
+      }
+
+      &__img {
+        background-color: white;
+        border-radius: 4px;
+        img {
+          width: 70px;
+        }
+      }
+
+      &__desc {
+        margin-left: 8px;
+        p {
+          color: white;
+          font-size: 13px;
+          line-height: 17px;
+          margin: 0;
+        }
+      }
+    }
+
+  }
+}
+
 @media (min-width: 768px) { 
+  main {
+    .plan-loader {
+      .plan-loader-content {
+        width: 530px;
+  
+        .plan-loading {
+          font-size: 36px;
+          line-height: 43px;
+          width: 330px;
+        }
+        
+        @keyframes ellipsis {
+          to {
+            width: 1.25em;    
+          }
+        }
+        
+        @-webkit-keyframes ellipsis {
+          to {
+            width: 1.25em;    
+          }
+        }
+  
+        img {
+          max-width: 100%;
+          margin: 40px 0 60px 0;
+        }
+  
+        .motivation {
+          font-size: 22px;
+          line-height: 35px;
+        }
+        
+        .author {
+          font-size: 13px;
+          line-height: 19.5px;
+        }
+      }
+    }
+  }
   .header { 
     background-image: url(https://res.cloudinary.com/duwf1nmnp/image/upload/v1646658566/Squad%20client%20/plan-illustration-desktop_1_w6rlcq.jpg);
     height: 666px;
