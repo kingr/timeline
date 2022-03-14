@@ -139,6 +139,13 @@ button {
   line-height: 21px;
   margin: 7px 0 0 0;
   color: #5D6E70;
+  position: relative;
+}
+.header-content .name::after {
+  content: url(https://res.cloudinary.com/duwf1nmnp/image/upload/v1647261070/Squad%20client%20/beta-badge-mobile_wsyvdu.svg);
+  position: absolute;
+  top: 24px;
+  right: -38px;
 }
 
 .header-content .lifeplan-block {
@@ -807,6 +814,10 @@ hr {
   .timeline-container-wrapper .header-content .name {
     font-size: 20px;
     line-height: 30px;
+  }
+  .timeline-container-wrapper .header-content .name::after {
+    top: 32px;
+    right: -52px;
   }
   .timeline-container-wrapper .header-content .lifeplan-block p {
     font-size: 36px;
