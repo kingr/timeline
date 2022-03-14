@@ -518,14 +518,24 @@ hr {
     content: "";
     border-top: 2px dotted white;
     background-color: #215A6B;
-    width: 206px;
+    width: 263px;
     position: absolute;
     top: 0;
-    left: 570px;
+    left: 511px;
     z-index: 3;
   }
   .timeline-container-wrapper .timeline-desktop .solid-line.third-goal {
     width: 555px;
+  }
+  .timeline-container-wrapper .timeline-desktop .solid-line.third-goal::after {
+    content: "";
+    border-top: 2px dotted white;
+    background-color: #215A6B;
+    width: 203px;
+    position: absolute;
+    top: 0;
+    left: 573px;
+    z-index: 3;
   }
   .timeline-container-wrapper .timeline-desktop .goal-column {
     height: 670px;
