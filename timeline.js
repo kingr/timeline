@@ -68,3 +68,25 @@ setTimeout(function(){
   pageOverlay.classList.add('fadeout')
 },6000)
 
+/* budget columns */
+var negativeElements = [document.querySelector('.current-budget .expense-negative'),document.querySelector('.proposed-budget .expense-negative')];
+
+var validNegativeElements = negativeElements.filter(function(val) { return val !== null })
+var negativeHeights;
+if (validNegativeElements) {
+  negativeHeights = validNegativeElements.reduce(function(accumulator, currentValue) {
+    accumulator.push(currentValue.clientHeight)
+    return accumulator;
+  }, []); 
+}
+
+const maxNegativeHeight = Math.max.apply(Math, negativeHeights);
+
+if (maxNegativeHeight) {
+  var budgetWrapperStyle = getComputedStyle(document.querySelector('.budget-wrapper'));
+  var margin = budgetWrapperStyle.paddingBottom.replace("px","");
+  var bottomMargin = parseInt(margin);
+
+  const newBottoMargin = bottomMargin + maxNegativeHeight;
+  document.querySelector('.budget-wrapper').style.paddingBottom = newBottoMargin + "px";
+}
