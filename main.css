@@ -218,12 +218,20 @@ body {
   background-color: #E5E5E5;
 }
 
-strong {
-  font-weight: bold;
+.mt-10 {
+  margin-top: 10px;
 }
 
-.app {
-  height: 100%;
+hr {
+  width: 174px;
+  border: 2px solid #183033;
+  margin: 8px;
+  opacity: 0.2;
+}
+hr.thin {
+  border: 1px solid #183033;
+  width: 100%;
+  margin: 13px 0;
 }
 
 h5 {
@@ -368,7 +376,7 @@ main {
   background-color: #E8EEF0;
   padding: 40px 0;
   border-radius: 4px;
-  margin: 36px 10px;
+  margin: 36px 10px 0 10px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -546,13 +554,6 @@ main {
 
 .dashed {
   border-style: dashed;
-}
-
-hr {
-  width: 174px;
-  border: 2px solid #183033;
-  margin: 8px;
-  opacity: 0.2;
 }
 
 .motto-wrapper {
@@ -1345,6 +1346,308 @@ hr {
 }
 .myplan-wrapper h5 {
   margin-bottom: 32px;
+}
+
+.goals-section-goal-wrapper-top-row .num-circle {
+  width: 32px;
+  height: 32px;
+  background-color: #FFDD6A;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #183033;
+  margin-right: 16px;
+  font-family: "IBM Plex Sans", sans-serif;
+  font-weight: 600;
+}
+@media (min-width: 768px) {
+  .goals-section-goal-wrapper-top-row .num-circle {
+    width: 40px;
+    height: 40px;
+  }
+}
+
+.goals-section-goal-wrapper-top-row {
+  border-radius: 4px;
+  border: 2px solid #D9E4E3;
+}
+
+.goals-section-goal-wrapper-top-row .goal-content .main-copy {
+  color: #183033;
+  font-family: "IBM Plex Sans", sans-serif;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 21.6px;
+}
+@media (min-width: 768px) {
+  .goals-section-goal-wrapper-top-row .goal-content .main-copy {
+    font-size: 20px;
+    line-height: 24px;
+  }
+}
+
+.goals-section-goal-wrapper-top-row .goal-content .sub-copy {
+  color: #183033;
+  font-family: "IBM Plex Sans", sans-serif;
+  font-size: 14px;
+  line-height: 21px;
+}
+@media (min-width: 768px) {
+  .goals-section-goal-wrapper-top-row .goal-content .sub-copy {
+    font-family: "IBM Plex Sans", sans-serif;
+    font-weight: 600;
+  }
+}
+
+.goals-section-goal-wrapper-top-row .goal-content .goal-date-wrapper-copy {
+  color: #5D6E70;
+  margin-left: 8px;
+  font-family: "IBM Plex Sans", sans-serif;
+  font-size: 14px;
+  line-height: 21px;
+}
+
+.goals-section-goal-wrapper-top-row.goal-desc::after, .goals-section-goal-wrapper-top-row.goal-start::after {
+  content: url(https://res.cloudinary.com/duwf1nmnp/image/upload/v1647369370/Squad%20client%20/Group_440_fpmzd8.svg);
+  position: absolute;
+}
+
+.goals-section {
+  margin-top: 58px;
+}
+@media (min-width: 768px) {
+  .goals-section {
+    margin-top: 120px;
+  }
+}
+.goals-section-heading {
+  width: 138px;
+  border-bottom: 4px solid #FFCF15;
+  margin: 0 auto;
+}
+@media (min-width: 768px) {
+  .goals-section-heading {
+    margin-bottom: 290px;
+  }
+}
+.goals-section-heading p {
+  color: #183033;
+  text-align: center;
+  margin-bottom: 14px;
+  font-family: "IBM Plex Sans", sans-serif;
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 16.8px;
+}
+@media (min-width: 768px) {
+  .goals-section-heading p {
+    font-size: 16px;
+    line-height: 19.2px;
+    margin-bottom: 12px;
+  }
+}
+.goals-section-goal {
+  background-color: #E8EEF0;
+  padding: 40px 16px;
+  border-radius: 4px;
+  margin: 172px 10px 236px 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #183033;
+}
+@media (min-width: 768px) {
+  .goals-section-goal {
+    padding: 48px 72px;
+    margin: 0 35px 376px 35px;
+  }
+}
+.goals-section-goal h5 {
+  margin-bottom: 40px;
+}
+@media (min-width: 768px) {
+  .goals-section-goal h5 {
+    margin-bottom: 56px;
+  }
+}
+.goals-section-goal.property {
+  position: relative;
+}
+.goals-section-goal.property::before {
+  content: url(https://res.cloudinary.com/duwf1nmnp/image/upload/v1647371509/Squad%20client%20/Buy_a_house_2_cdlfrn.svg);
+  position: absolute;
+  top: -153px;
+}
+@media (min-width: 768px) {
+  .goals-section-goal.property::before {
+    top: -224px;
+    content: url(https://res.cloudinary.com/duwf1nmnp/image/upload/v1647368299/Squad%20client%20/Buy_a_house_1_d5nxdl.svg);
+  }
+}
+.goals-section-goal.travel {
+  position: relative;
+}
+.goals-section-goal.travel::before {
+  content: url(https://res.cloudinary.com/duwf1nmnp/image/upload/v1647371509/Squad%20client%20/Holiday_3_qiakez.svg);
+  position: absolute;
+  top: -163px;
+}
+@media (min-width: 768px) {
+  .goals-section-goal.travel::before {
+    top: -235px;
+    content: url(https://res.cloudinary.com/duwf1nmnp/image/upload/v1647368299/Squad%20client%20/Holiday_2_fxac98.svg);
+  }
+}
+.goals-section-goal.family {
+  position: relative;
+}
+.goals-section-goal.family::before {
+  content: url(https://res.cloudinary.com/duwf1nmnp/image/upload/v1647371509/Squad%20client%20/Start_a_family_2_nvtjqb.svg);
+  position: absolute;
+  top: -153px;
+}
+@media (min-width: 768px) {
+  .goals-section-goal.family::before {
+    top: -224px;
+    content: url(https://res.cloudinary.com/duwf1nmnp/image/upload/v1647368298/Squad%20client%20/Start_a_family_1_cn70gu.svg);
+  }
+}
+.goals-section-goal.debt {
+  position: relative;
+}
+.goals-section-goal.debt::before {
+  content: url(https://res.cloudinary.com/duwf1nmnp/image/upload/v1647371509/Squad%20client%20/Pay_off_debt_2_e4lhqu.svg);
+  position: absolute;
+  top: -153px;
+}
+@media (min-width: 768px) {
+  .goals-section-goal.debt::before {
+    top: -224px;
+    content: url(https://res.cloudinary.com/duwf1nmnp/image/upload/v1647368299/Squad%20client%20/Pay_off_debt_1_tol8r7.svg);
+  }
+}
+.goals-section-goal-wrapper {
+  display: flex;
+  flex-direction: column;
+}
+@media (min-width: 768px) {
+  .goals-section-goal-wrapper {
+    padding: 24px;
+    background: white;
+    justify-content: space-between;
+    flex-flow: wrap;
+    border-radius: 4px;
+  }
+}
+.goals-section-goal-wrapper-top-row {
+  display: flex;
+  background-color: white;
+  padding: 22px 16px;
+}
+.goals-section-goal-wrapper-top-row:not(:last-child) {
+  margin-bottom: 24px;
+}
+.goals-section-goal-wrapper-top-row .goal-content {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 80%;
+}
+.goals-section-goal-wrapper-top-row .goal-content .goal-date-wrapper {
+  display: flex;
+}
+@media (min-width: 768px) {
+  .goals-section-goal-wrapper-top-row .goal-content .goal-date-wrapper {
+    background-color: white;
+    position: absolute;
+    top: -34px;
+    padding: 0 10px;
+    left: -43px;
+  }
+}
+.goals-section-goal-wrapper-top-row.goal-start {
+  position: relative;
+}
+.goals-section-goal-wrapper-top-row.goal-start .num-circle {
+  margin-top: 25px;
+}
+@media (min-width: 768px) {
+  .goals-section-goal-wrapper-top-row.goal-start .num-circle {
+    margin-top: 0;
+  }
+}
+.goals-section-goal-wrapper-top-row.goal-start::after {
+  right: 18px;
+  transform: rotate(80deg);
+  bottom: -20px;
+}
+@media (min-width: 768px) {
+  .goals-section-goal-wrapper-top-row.goal-start::after {
+    right: -32px;
+    transform: rotate(0deg);
+    bottom: 35px;
+    z-index: 2;
+  }
+}
+@media (min-width: 768px) {
+  .goals-section-goal-wrapper-top-row.goal-start {
+    flex-grow: 0.43;
+  }
+}
+.goals-section-goal-wrapper-top-row.goal-desc {
+  position: relative;
+}
+.goals-section-goal-wrapper-top-row.goal-desc .num-circle {
+  margin-top: 5px;
+}
+.goals-section-goal-wrapper-top-row.goal-desc::after {
+  right: 18px;
+  transform: rotate(80deg);
+  bottom: -20px;
+}
+@media (min-width: 768px) {
+  .goals-section-goal-wrapper-top-row.goal-desc::after {
+    right: 144px;
+    transform: rotate(70deg);
+    bottom: -20px;
+  }
+}
+@media (min-width: 768px) {
+  .goals-section-goal-wrapper-top-row.goal-desc {
+    flex-grow: 0.43;
+  }
+}
+.goals-section-goal-wrapper-top-row.goal-achieved .num-circle {
+  margin-top: 50px;
+}
+.goals-section-goal-wrapper-top-row.goal-achieved .pay-value-wrapper {
+  display: flex;
+}
+.goals-section-goal-wrapper-top-row.goal-achieved .pay-value-wrapper p.monthly-val {
+  color: #183033;
+  font-size: 14px;
+  line-height: 21px;
+  font-family: "IBM Plex Sans", sans-serif;
+  font-weight: 600;
+}
+@media (min-width: 768px) {
+  .goals-section-goal-wrapper-top-row.goal-achieved .goal-date-wrapper {
+    left: 217px;
+  }
+}
+@media (min-width: 768px) {
+  .goals-section-goal-wrapper-top-row.goal-achieved {
+    flex-grow: 1;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+}
+.goals-section-goal-wrapper-bottom-row {
+  width: 100%;
+  height: 262px;
 }
 
 /*# sourceMappingURL=main.css.map */

@@ -5,10 +5,19 @@ body {
   background-color: $off-grey;
 }
 
-strong {
-  font-weight: bold;
+.mt-10 {
+  margin-top: 10px;
 }
 
-.app {
-  height: 100%;
+hr {
+  width: 174px;
+  border: 2px solid $black-02;
+  margin: 8px;
+  opacity: 0.2;
+
+  &.thin {
+    border: 1px solid $black-02;
+    width: 100%;
+    margin: 13px 0;
+  }
 }
