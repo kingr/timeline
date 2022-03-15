@@ -279,6 +279,11 @@ main {
   align-items: center;
   width: 90px;
 }
+@media (min-width: 768px) {
+  .budget-wrapper .budget-col-wrapper .proposed-budget .budget-inner .expense--type, .budget-wrapper .budget-col-wrapper .current-budget .budget-inner .expense--type {
+    width: 170px;
+  }
+}
 
 .budget-wrapper .budget-col-wrapper .proposed-budget .budget-inner .expense--type p, .budget-wrapper .budget-col-wrapper .current-budget .budget-inner .expense--type p {
   font-family: "IBM Plex Sans", sans-serif;
@@ -329,6 +334,7 @@ main {
     font-size: 16px;
     line-height: 19.2px;
     width: 84px;
+    margin-bottom: 25px;
   }
 }
 
@@ -381,14 +387,10 @@ main {
   justify-content: center;
   width: 296px;
   position: relative;
-  grid-column-gap: 15px;
-  column-gap: 15px;
 }
 @media (min-width: 768px) {
   .budget-wrapper .budget-col-wrapper {
     width: 712px;
-    grid-column-gap: 32px;
-    column-gap: 32px;
   }
 }
 .budget-wrapper .budget-col-wrapper::after {
@@ -398,6 +400,17 @@ main {
   width: 100%;
   height: 2px;
   background-color: #173F4B;
+}
+.budget-wrapper .budget-col-wrapper .current-budget {
+  margin-right: 7px;
+}
+@media (min-width: 768px) {
+  .budget-wrapper .budget-col-wrapper .current-budget {
+    margin-right: 16px;
+  }
+}
+.budget-wrapper .budget-col-wrapper .current-budget .budget-inner .expense--type {
+  justify-content: flex-end;
 }
 .budget-wrapper .budget-col-wrapper .current-budget .budget-inner .expense--type p {
   text-align: right;
@@ -411,6 +424,14 @@ main {
 }
 .budget-wrapper .budget-col-wrapper .current-budget .budget-inner .expense .budget-col::before {
   left: -13px;
+}
+.budget-wrapper .budget-col-wrapper .proposed-budget {
+  margin-left: 7px;
+}
+@media (min-width: 768px) {
+  .budget-wrapper .budget-col-wrapper .proposed-budget {
+    margin-left: 16px;
+  }
 }
 .budget-wrapper .budget-col-wrapper .proposed-budget--name {
   align-self: flex-start;
