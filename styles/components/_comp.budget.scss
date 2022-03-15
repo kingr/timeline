@@ -1,0 +1,51 @@
+.budget-wrapper {
+  background-color: $light-grey;
+  padding: 40px 0;
+  border-radius: 4px;
+  margin: 22px 16px;
+  width: calc(100% - 32px);
+  display: flex;
+  flex-direction: column;
+  h5 {
+    text-align: center;
+    margin-bottom: 30px;
+  }
+  .budget-col-wrapper {
+    .current-budget {
+      display: flex;
+      flex-direction: column;
+      .budget-inner {
+        display: flex;
+        flex-direction: column;
+        height: 180px;
+        width: 140px;
+        .expense {
+          display: flex;
+          .budget-col {
+            width: 180px;
+            &.living-exp {
+              background-color: $bright-teal;
+            } 
+            &.debt {
+              background-color: $yellow;
+            }
+            &.saving {
+              background-color: $cyan;
+            }
+            &.remaining {
+              background-color: $blue;
+            }
+        
+            &--label {
+              text-align: center;
+              @include plex-sans;
+              @include font-size(14px, 16.8px);
+              color: $white;
+            }
+          }
+        }
+      }
+    }
+
+  }
+}
