@@ -1,99 +1,246 @@
 @charset "UTF-8";
+/**
+ * SETTINGS
+ * Config...............Project-level config.
+ * Global...............Project-specific, globally available settings.
+ * Colors...............Project-specific
+ *
+ * TOOLS
+ * Mixins...............Global mixins.
+ *
+ * GENERIC
+ * Reset................Css resets.
+ * Box-sizing...........box-model reset.
+ *
+ * ELEMENTS
+ * Headings.............H1–H6
+ * Links................Element-level link styling.
+ *
+ * OBJECTS
+ * Layout...............Layout abstraction tool.
+ *
+ * COMPONENTS
+ * Forms................Component-level form styling.
+ * Buttons..............Element-agnostic button styles.
+ * Menu.................Menu styles.
+ *
+ * TRUMPS
+ * Typography...........Utilities for manipulating text.
+ * Utilities..............Helper classes for showing or hiding content.
+ *
+ */
+/**
+ * ReSass.
+ *
+ * MIXIN: Responsive Media Queries.
+ *
+ * Creates responsive media queries for seven different screen sizes.
+ * These are based on min-width which means if x is the size then your
+ * CSS will affect any device with screen width x and above.
+ *
+ * USAGE:
+ *	@include r(240)  { }
+ *	@include r(320)  { }
+ *	@include r(480)  { }
+ *	@include r(768)  { }
+ *	@include r(1024) { }
+ *	@include r(1140) { }
+ *	@include r(1280) { }
+ *  @include r(1500) { }
+ *
+ * CSS content goes inside {} brackets. These mixins should be used inside
+ * a class definition. For example:
+ *
+ * The following CSS will hide the .header on screen width 320px and above.
+ * .header {
+   * 	  @include r(320)  { display: none; }
+   * }
+   *
+   * @author  Ahmad Awais (https://github.com/ahmadawais)
+   * @link    https://github.com/ahmadawais/ReSass.git
+   * @version 1.0.0
+   */
 @import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;700&display=swap");
+@media (min-width: 320px) {
+  .header.false {
+    display: inherit;
+  }
+}
+@media (min-width: 1024px) {
+  .header.false {
+    display: none;
+  }
+}
+
 @font-face {
   font-family: "Recoleta-Medium";
   src: url("https://res.cloudinary.com/duwf1nmnp/raw/upload/v1646657637/Squad%20client%20/font_tkrg6o.woff") format("woff"), url("https://res.cloudinary.com/duwf1nmnp/raw/upload/v1646657637/Squad%20client%20/font_tucksx.woff2") format("woff2");
 }
-body {
+/* http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
   margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+blockquote,
+q {
+  quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+body {
+  font-family: "IBM Plex Sans", sans-serif;
+  height: 100%;
+  margin: 0;
+}
+
+strong {
+  font-weight: bold;
+}
+
+.app {
+  height: 100%;
+}
+
+h5 {
+  font-family: "Recoleta-Medium";
+  font-size: 24px;
+  line-height: 33.6px;
+  color: #183033;
+}
+@media (min-width: 1024px) {
+  h5 {
+    font-size: 36px;
+    line-height: 46.8px;
+  }
 }
 
 main {
   display: flex;
   justify-content: center;
-}
-main .plan-loader {
-  display: flex;
-  position: fixed;
-  z-index: 10;
-  width: 100%;
-  height: 100%;
-  align-items: center;
-  justify-content: center;
-  background-color: white;
-}
-main .plan-loader.fadeout {
-  opacity: 0;
-  -webkit-animation: fadeout 4s;
-  /* Safari, Chrome and Opera > 12.1 */
-  -moz-animation: fadeout 4s;
-  /* Firefox < 16 */
-  -ms-animation: fadeout 4s;
-  /* Internet Explorer */
-  -o-animation: fadeout 4s;
-  /* Opera < 12.1 */
-  animation: fadeout 4s;
-}
-@keyframes fadeout {
-  from {
-    opacity: 1;
-  }
-  to {
-    opacity: 0;
-  }
-}
-main .plan-loader .plan-loader-content {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 290px;
-}
-main .plan-loader .plan-loader-content .plan-loading {
-  font-size: 30px;
-  font-family: "Recoleta-Medium", sans-serif;
-  color: #183033;
-  margin: 0 auto;
-  width: 273px;
-}
-main .plan-loader .plan-loader-content .plan-loading:after {
-  overflow: hidden;
-  display: inline-block;
-  vertical-align: bottom;
-  -webkit-animation: ellipsis steps(4, end) 1400ms infinite;
-  animation: ellipsis steps(4, end) 1400ms infinite;
-  content: "…";
-  /* ascii code for the ellipsis character */
-  width: 0px;
-}
-@keyframes ellipsis {
-  to {
-    width: 1.25em;
-  }
-}
-@-webkit-keyframes ellipsis {
-  to {
-    width: 1.25em;
-  }
-}
-main .plan-loader .plan-loader-content img {
-  max-width: 100%;
-  margin: 40px 0 60px 0;
-}
-main .plan-loader .plan-loader-content .motivation {
-  font-family: "IBM Plex Sans", sans-serif;
-  color: #183033;
-  text-align: center;
-  margin: 0;
-}
-main .plan-loader .plan-loader-content .motivation::before {
-  content: url(https://res.cloudinary.com/duwf1nmnp/image/upload/v1647263492/Squad%20client%20/quote_kdbafo.svg);
-  margin-right: 10px;
-}
-main .plan-loader .plan-loader-content .author {
-  font-family: "IBM Plex Sans", sans-serif;
-  color: #789296;
-  font-size: 13px;
-  margin: 15px 0 0 0;
 }
 
 .header {
@@ -452,37 +599,6 @@ hr {
 }
 
 @media (min-width: 768px) {
-  main .plan-loader .plan-loader-content {
-    width: 530px;
-  }
-  main .plan-loader .plan-loader-content .plan-loading {
-    font-size: 36px;
-    line-height: 43px;
-    width: 330px;
-  }
-  @keyframes ellipsis {
-    to {
-      width: 1.25em;
-    }
-  }
-  @-webkit-keyframes ellipsis {
-    to {
-      width: 1.25em;
-    }
-  }
-  main .plan-loader .plan-loader-content img {
-    max-width: 100%;
-    margin: 40px 0 60px 0;
-  }
-  main .plan-loader .plan-loader-content .motivation {
-    font-size: 22px;
-    line-height: 35px;
-  }
-  main .plan-loader .plan-loader-content .author {
-    font-size: 13px;
-    line-height: 19.5px;
-  }
-
   .header {
     background-image: url(https://res.cloudinary.com/duwf1nmnp/image/upload/v1646658566/Squad%20client%20/plan-illustration-desktop_1_w6rlcq.jpg);
     height: 666px;
@@ -865,6 +981,122 @@ hr {
   .timeline-container-wrapper .motto-wrapper .motto--body {
     font-size: 28px;
     line-height: 39px;
+  }
+}
+.plan-loader {
+  display: flex;
+  position: fixed;
+  z-index: 10;
+  width: 100%;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+  background-color: white;
+}
+.plan-loader.fadeout {
+  opacity: 0;
+  -webkit-animation: fadeout 4s;
+  /* Safari, Chrome and Opera > 12.1 */
+  -moz-animation: fadeout 4s;
+  /* Firefox < 16 */
+  -ms-animation: fadeout 4s;
+  /* Internet Explorer */
+  -o-animation: fadeout 4s;
+  /* Opera < 12.1 */
+  animation: fadeout 4s;
+}
+@keyframes fadeout {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+.plan-loader .plan-loader-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 290px;
+}
+.plan-loader .plan-loader-content .plan-loading {
+  font-size: 30px;
+  font-family: "Recoleta-Medium", sans-serif;
+  color: #183033;
+  margin: 0 auto;
+  width: 273px;
+}
+.plan-loader .plan-loader-content .plan-loading:after {
+  overflow: hidden;
+  display: inline-block;
+  vertical-align: bottom;
+  -webkit-animation: ellipsis steps(4, end) 1400ms infinite;
+  animation: ellipsis steps(4, end) 1400ms infinite;
+  content: "…";
+  /* ascii code for the ellipsis character */
+  width: 0px;
+}
+@keyframes ellipsis {
+  to {
+    width: 1.25em;
+  }
+}
+@-webkit-keyframes ellipsis {
+  to {
+    width: 1.25em;
+  }
+}
+.plan-loader .plan-loader-content img {
+  max-width: 100%;
+  margin: 40px 0 60px 0;
+}
+.plan-loader .plan-loader-content .motivation {
+  font-family: "IBM Plex Sans", sans-serif;
+  color: #183033;
+  text-align: center;
+  margin: 0;
+}
+.plan-loader .plan-loader-content .motivation::before {
+  content: url(https://res.cloudinary.com/duwf1nmnp/image/upload/v1647263492/Squad%20client%20/quote_kdbafo.svg);
+  margin-right: 10px;
+}
+.plan-loader .plan-loader-content .author {
+  font-family: "IBM Plex Sans", sans-serif;
+  color: #789296;
+  font-size: 13px;
+  margin: 15px 0 0 0;
+}
+
+@media (min-width: 768px) {
+  .plan-loader .plan-loader-content {
+    width: 530px;
+  }
+  .plan-loader .plan-loader-content .plan-loading {
+    font-size: 36px;
+    line-height: 43px;
+    width: 330px;
+  }
+  @keyframes ellipsis {
+    to {
+      width: 1.25em;
+    }
+  }
+  @-webkit-keyframes ellipsis {
+    to {
+      width: 1.25em;
+    }
+  }
+  .plan-loader .plan-loader-content img {
+    max-width: 100%;
+    margin: 40px 0 60px 0;
+  }
+  .plan-loader .plan-loader-content .motivation {
+    font-size: 22px;
+    line-height: 35px;
+  }
+  .plan-loader .plan-loader-content .author {
+    font-size: 13px;
+    line-height: 19.5px;
   }
 }
 

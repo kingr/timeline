@@ -1,0 +1,43 @@
+/**
+ * SETTINGS
+ * Config...............Project-level config.
+ * Global...............Project-specific, globally available settings.
+ * Colors...............Project-specific
+ *
+ * TOOLS
+ * Mixins...............Global mixins.
+ *
+ * GENERIC
+ * Reset................Css resets.
+ * Box-sizing...........box-model reset.
+ *
+ * ELEMENTS
+ * Headings.............H1–H6
+ * Links................Element-level link styling.
+ *
+ * OBJECTS
+ * Layout...............Layout abstraction tool.
+ *
+ * COMPONENTS
+ * Forms................Component-level form styling.
+ * Buttons..............Element-agnostic button styles.
+ * Menu.................Menu styles.
+ *
+ * TRUMPS
+ * Typography...........Utilities for manipulating text.
+ * Utilities..............Helper classes for showing or hiding content.
+ *
+ */
+
+ @import "tools/tools.mixins";
+ @import "settings/settings.colors";
+ @import "settings/settings.font";
+ @import "generic/generic.reset";
+ @import "elements/elements.general";
+ @import "elements/elements.headings";
+ @import "elements/elements.main";
+ @import "objects/objects.layout";
+ @import "components/comp.budget";
+ @import "components/comp.timeline";
+ @import "components/comp.plan.loader";
+ 
