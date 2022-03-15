@@ -239,6 +239,13 @@ h5 {
   }
 }
 
+p {
+  color: #5D6E70;
+  font-family: "IBM Plex Sans", sans-serif;
+  font-size: 16px;
+  line-height: 25.6px;
+}
+
 main {
   display: flex;
   flex-direction: column;
@@ -290,6 +297,7 @@ main {
   font-weight: bold;
   font-size: 12px;
   line-height: 14.4px;
+  color: #183033;
 }
 
 .budget-wrapper .budget-col-wrapper .proposed-budget .budget-inner .expense .budget-col, .budget-wrapper .budget-col-wrapper .current-budget .budget-inner .expense .budget-col {
@@ -369,16 +377,7 @@ main {
 @media (min-width: 768px) {
   .budget-wrapper {
     padding: 48px 72px;
-  }
-}
-.budget-wrapper h5 {
-  text-align: center;
-  margin-bottom: 30px;
-}
-@media (min-width: 768px) {
-  .budget-wrapper h5 {
-    font-size: 36px;
-    line-height: 46.8px;
+    margin: 0 35px;
   }
 }
 .budget-wrapper .budget-col-wrapper {
@@ -387,6 +386,7 @@ main {
   justify-content: center;
   width: 296px;
   position: relative;
+  margin-top: 30px;
 }
 @media (min-width: 768px) {
   .budget-wrapper .budget-col-wrapper {
@@ -512,6 +512,7 @@ main {
   font-weight: 500;
   font-size: 25px;
   margin: 5px 0;
+  color: #183033;
 }
 
 .header-content .date {
@@ -909,6 +910,16 @@ hr {
     flex-direction: column;
     justify-content: space-between;
     margin-top: 215px;
+  }
+  .timeline-container-wrapper .timeline-desktop .goal-column:nth-child(2) .goal-date__time {
+    top: 192px;
+    left: 38px;
+  }
+  .timeline-container-wrapper .timeline-desktop .goal-column:nth-child(2) .goal-date__time::after, .timeline-container-wrapper .timeline-desktop .goal-column:nth-child(2) .goal-date__time::before {
+    display: none;
+  }
+  .timeline-container-wrapper .timeline-desktop .goal-column:nth-child(2) .goal-date__time p {
+    text-align: center;
   }
   .timeline-container-wrapper .timeline-desktop .goal-column:nth-child(2)::before {
     content: url(https://res.cloudinary.com/duwf1nmnp/image/upload/v1646738436/Squad%20client%20/Step_bubble_wprco5.svg);
@@ -1315,6 +1326,25 @@ hr {
     font-size: 13px;
     line-height: 19.5px;
   }
+}
+.myplan-wrapper {
+  background-color: #E8EEF0;
+  padding: 40px 30px 53px 40px;
+  border-radius: 4px;
+  margin: 36px 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #183033;
+}
+@media (min-width: 768px) {
+  .myplan-wrapper {
+    padding: 48px 72px;
+    margin: 72px 35px;
+  }
+}
+.myplan-wrapper h5 {
+  margin-bottom: 32px;
 }
 
 /*# sourceMappingURL=main.css.map */
