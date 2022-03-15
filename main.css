@@ -60,7 +60,7 @@
    * @link    https://github.com/ahmadawais/ReSass.git
    * @version 1.0.0
    */
-@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;600;700&display=swap");
 @media (min-width: 320px) {
   .header.false {
     display: inherit;
@@ -215,6 +215,7 @@ body {
   font-family: "IBM Plex Sans", sans-serif;
   height: 100%;
   margin: 0;
+  background-color: #E5E5E5;
 }
 
 strong {
@@ -240,7 +241,194 @@ h5 {
 
 main {
   display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.page-inner {
+  background-color: white;
+  max-width: 1000px;
+  filter: drop-shadow(0px 4px 12px rgba(0, 0, 0, 0.1));
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
+  padding: 6px;
+}
+
+.budget-wrapper .budget-col-wrapper .proposed-budget, .budget-wrapper .budget-col-wrapper .current-budget {
+  display: flex;
+  flex-direction: column;
+}
+
+.budget-wrapper .budget-col-wrapper .proposed-budget .budget-inner, .budget-wrapper .budget-col-wrapper .current-budget .budget-inner {
+  display: flex;
+  flex-direction: column;
+  height: 180px;
+  position: relative;
+}
+
+.budget-wrapper .budget-col-wrapper .proposed-budget .budget-inner .expense, .budget-wrapper .budget-col-wrapper .current-budget .budget-inner .expense {
+  display: flex;
+  min-height: 22% !important;
+}
+.budget-wrapper .budget-col-wrapper .proposed-budget .budget-inner .expense:not(:last-child), .budget-wrapper .budget-col-wrapper .current-budget .budget-inner .expense:not(:last-child) {
+  margin-bottom: -2px;
+}
+
+.budget-wrapper .budget-col-wrapper .proposed-budget .budget-inner .expense--type, .budget-wrapper .budget-col-wrapper .current-budget .budget-inner .expense--type {
+  display: flex;
+  align-items: center;
+  width: 90px;
+}
+
+.budget-wrapper .budget-col-wrapper .proposed-budget .budget-inner .expense--type p, .budget-wrapper .budget-col-wrapper .current-budget .budget-inner .expense--type p {
+  font-family: "IBM Plex Sans", sans-serif;
+  font-weight: bold;
+  font-size: 12px;
+  line-height: 14.4px;
+}
+
+.budget-wrapper .budget-col-wrapper .proposed-budget .budget-inner .expense .budget-col, .budget-wrapper .budget-col-wrapper .current-budget .budget-inner .expense .budget-col {
+  width: 60px;
+  display: flex;
+  align-items: center;
   justify-content: center;
+  position: relative;
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
+}
+.budget-wrapper .budget-col-wrapper .proposed-budget .budget-inner .expense .living-exp.budget-col, .budget-wrapper .budget-col-wrapper .current-budget .budget-inner .expense .living-exp.budget-col {
+  background-color: #0DAD90;
+}
+.budget-wrapper .budget-col-wrapper .proposed-budget .budget-inner .expense .debt.budget-col, .budget-wrapper .budget-col-wrapper .current-budget .budget-inner .expense .debt.budget-col {
+  background-color: #FFCF15;
+}
+.budget-wrapper .budget-col-wrapper .proposed-budget .budget-inner .expense .saving.budget-col, .budget-wrapper .budget-col-wrapper .current-budget .budget-inner .expense .saving.budget-col {
+  background-color: #C74577;
+}
+.budget-wrapper .budget-col-wrapper .proposed-budget .budget-inner .expense .remaining.budget-col, .budget-wrapper .budget-col-wrapper .current-budget .budget-inner .expense .remaining.budget-col {
+  background-color: #007CA4;
+}
+@media (min-width: 768px) {
+  .budget-wrapper .budget-col-wrapper .proposed-budget .budget-inner .expense .budget-col, .budget-wrapper .budget-col-wrapper .current-budget .budget-inner .expense .budget-col {
+    width: 84px;
+  }
+}
+
+.budget-wrapper .budget-col-wrapper .proposed-budget--name, .budget-wrapper .budget-col-wrapper .current-budget--name {
+  font-size: 14px;
+  line-height: 16.8px;
+  font-family: "IBM Plex Sans", sans-serif;
+  font-weight: 600;
+  text-align: center;
+  align-self: flex-end;
+  width: 60px;
+  margin-bottom: 15px;
+}
+@media (min-width: 768px) {
+  .budget-wrapper .budget-col-wrapper .proposed-budget--name, .budget-wrapper .budget-col-wrapper .current-budget--name {
+    font-size: 16px;
+    line-height: 19.2px;
+    width: 84px;
+  }
+}
+
+.budget-wrapper .budget-col-wrapper .proposed-budget .budget-inner .expense .budget-col--label, .budget-wrapper .budget-col-wrapper .current-budget .budget-inner .expense .budget-col--label {
+  text-align: center;
+  font-family: "IBM Plex Sans", sans-serif;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 16.8px;
+  color: white;
+}
+
+.budget-wrapper .budget-col-wrapper .proposed-budget .budget-inner .expense .budget-col::before, .budget-wrapper .budget-col-wrapper .current-budget .budget-inner .expense .budget-col::before {
+  content: "";
+  width: 9px;
+  height: 1px;
+  background: #9FB5B8;
+  position: absolute;
+  top: 50%;
+}
+
+.budget-wrapper {
+  background-color: #E8EEF0;
+  padding: 40px 0;
+  border-radius: 4px;
+  margin: 36px 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #183033;
+}
+@media (min-width: 768px) {
+  .budget-wrapper {
+    padding: 48px 72px;
+  }
+}
+.budget-wrapper h5 {
+  text-align: center;
+  margin-bottom: 30px;
+}
+@media (min-width: 768px) {
+  .budget-wrapper h5 {
+    font-size: 36px;
+    line-height: 46.8px;
+  }
+}
+.budget-wrapper .budget-col-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 296px;
+  position: relative;
+  grid-column-gap: 15px;
+  column-gap: 15px;
+}
+@media (min-width: 768px) {
+  .budget-wrapper .budget-col-wrapper {
+    width: 712px;
+    grid-column-gap: 32px;
+    column-gap: 32px;
+  }
+}
+.budget-wrapper .budget-col-wrapper::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 2px;
+  background-color: #173F4B;
+}
+.budget-wrapper .budget-col-wrapper .current-budget .budget-inner .expense--type p {
+  text-align: right;
+  margin-right: 18px;
+}
+.budget-wrapper .budget-col-wrapper .current-budget .budget-inner .expense-negative {
+  position: absolute;
+}
+.budget-wrapper .budget-col-wrapper .current-budget .budget-inner .expense-negative .budget-col {
+  border-radius: 0 0 4px 4px;
+}
+.budget-wrapper .budget-col-wrapper .current-budget .budget-inner .expense .budget-col::before {
+  left: -13px;
+}
+.budget-wrapper .budget-col-wrapper .proposed-budget--name {
+  align-self: flex-start;
+}
+.budget-wrapper .budget-col-wrapper .proposed-budget .budget-inner .expense {
+  flex-direction: row-reverse;
+}
+.budget-wrapper .budget-col-wrapper .proposed-budget .budget-inner .expense--type p {
+  margin-left: 18px;
+}
+.budget-wrapper .budget-col-wrapper .proposed-budget .budget-inner .expense-negative {
+  position: absolute;
+}
+.budget-wrapper .budget-col-wrapper .proposed-budget .budget-inner .expense-negative .budget-col {
+  border-radius: 0 0 4px 4px;
+}
+.budget-wrapper .budget-col-wrapper .proposed-budget .budget-inner .expense .budget-col::before {
+  right: -13px;
 }
 
 .header {
@@ -276,7 +464,7 @@ main {
 }
 
 .header-content .name {
-  font-size: 16px;
+  font-size: 14px;
   line-height: 21px;
   margin: 7px 0 0 0;
   color: #5D6E70;
@@ -311,6 +499,12 @@ main {
   color: #5D6E70;
   text-align: center;
   margin: 5px 0 0 0;
+}
+@media (min-width: 768px) {
+  .header-content .date {
+    font-size: 14px;
+    line-height: 21px;
+  }
 }
 
 .header .description-wrapper {
@@ -361,6 +555,7 @@ hr {
 .motto-wrapper .motto--title {
   font-size: 14px;
   line-height: 17px;
+  letter-spacing: 0.1em;
   color: #fff;
   text-transform: uppercase;
   font-weight: bold;
@@ -977,6 +1172,7 @@ hr {
   }
   .timeline-container-wrapper .motto-wrapper .motto--title {
     font-size: 16px;
+    line-height: 19.2px;
   }
   .timeline-container-wrapper .motto-wrapper .motto--body {
     font-size: 28px;
